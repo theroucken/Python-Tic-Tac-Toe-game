@@ -43,16 +43,16 @@ class Game():
         os.system("cls")
         print(f"\tMove {self.config[self.turn]['color']}")
         self.ingame_board_visual = [
-            [f"\t{self.ingame_board[1]} | {self.ingame_board[2]} | {self.ingame_board[3]}\t"], self.right_ingame_board_visual[0:10],
-            ["\t— + — + —"], self.right_ingame_board_visual[10:21],
-            [f"\t{self.ingame_board[4]} | {self.ingame_board[5]} | {self.ingame_board[6]}\t"], self.right_ingame_board_visual[21:31],
-            ["\t— + — + —"], self.right_ingame_board_visual[31:42],
-            [f"\t{self.ingame_board[7]} | {self.ingame_board[8]} | {self.ingame_board[9]}\t"], self.right_ingame_board_visual[42:55]
+            f"\t{self.ingame_board[1]} | {self.ingame_board[2]} | {self.ingame_board[3]}\t", self.right_ingame_board_visual[0:10],
+            "\t— + — + —", self.right_ingame_board_visual[10:21],
+            f"\t{self.ingame_board[4]} | {self.ingame_board[5]} | {self.ingame_board[6]}\t", self.right_ingame_board_visual[21:31],
+            "\t— + — + —", self.right_ingame_board_visual[31:42],
+            f"\t{self.ingame_board[7]} | {self.ingame_board[8]} | {self.ingame_board[9]}\t", self.right_ingame_board_visual[42:55]
         ]
-        output = str()
-        for board_chunk in self.ingame_board_visual:
-            output += "".join(board_chunk)
-        print(output)
+        # output = str()
+        # for board_chunk in self.ingame_board_visual:
+        #     output += "".join(board_chunk)
+        print("".join(board_chunk for board_chunk in self.ingame_board_visual))
 
     def check_for_draw(self):
         for cell in self.ingame_board:
