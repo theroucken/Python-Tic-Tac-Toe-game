@@ -59,8 +59,8 @@ class Game():
             if self.ingame_board[cell] != " ":
                 self.draw_counter -= 1
         if self.draw_counter == 0:
-            for plate in self.ingame_board:
-                self.ingame_board[plate] = self.config[self.ingame_board[plate]]["color"]
+            for cell in self.ingame_board:
+                self.ingame_board[cell] = self.config[self.ingame_board[cell]]["color"]
                 self.update_canvas()
                 time.sleep(0.2)
             self.game = False
